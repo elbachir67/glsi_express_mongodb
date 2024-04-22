@@ -8,10 +8,6 @@ const PORT = process.env.PORT || 4002;
 
 const db = require("./models");
 
-const bodyParser = require("body-parser");
-
-app.use(bodyParser.json());
-
 //app.use(bodyParser.urlencoded({ extended: true }));
 
 db.mongoose
@@ -25,8 +21,6 @@ db.mongoose
   });
 
 app.use(logger("dev"));
-
-require("./routes/student.routes")(app);
 
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to glsi students application." });
